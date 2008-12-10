@@ -5,7 +5,8 @@ checkAdmin();
 $message = "";
 
 if (!isset($bilancioAnnoRichiesto)) {
-	$annoRichiesto = '2006';
+	//$annoRichiesto = '2006';
+	$annoRichiesto = date("Y");
 }
 
 ?>

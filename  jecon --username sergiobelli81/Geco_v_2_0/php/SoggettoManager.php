@@ -7,6 +7,32 @@ class SoggettoManager {
     function lists () {
         return connetti_query("select * from sd_soggetti where deleted = 'N' order by cognome, nome, ragione_sociale");
     }
+    function list_filtro ($filtro) {
+        return connetti_query(
+            "select     * 
+             from       sd_soggetti 
+             where      deleted = 'N' 
+                        and     
+                            (
+                                Ragione_Sociale like '%".$filtro."%'
+                                or cognome like '%".$filtro."%'
+                                or nome like '%".$filtro."%'
+                                or PI like '%".$filtro."%'
+                                or CF like '%".$filtro."%'
+                                or Telefono like '%".$filtro."%'
+                                or Telefono2 like '%".$filtro."%'
+                                or Cell like '%".$filtro."%'
+                                or Fax like '%".$filtro."%'
+                                or E_mail like '%".$filtro."%'
+                                or Web like '%".$filtro."%'
+                                or Provincia like '%".$filtro."%'
+                                or CAP like '%".$filtro."%'
+                                or Citta like '%".$filtro."%'
+                                or Indirizzo like '%".$filtro."%'
+                                or Descrizione like '%".$filtro."%'
+                            )
+             order by cognome, nome, ragione_sociale");
+    }
 }
 
 /*
