@@ -8,7 +8,6 @@ checkAdmin();
 
 $message = "";
 
-
 if (!isset($session['ID_Cliente']))
 	{ // se per qualsiasi ragione ho perso l'ID_Cliente lo rimando sull'elenco fatture
 	// header("Location: Admin_Fatture.php");

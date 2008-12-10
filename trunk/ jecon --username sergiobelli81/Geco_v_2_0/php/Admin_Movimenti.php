@@ -1,47 +1,25 @@
 <?
-
     include("dblib.inc");
-
     include("clublib.inc");
-
     checkAdmin();
-
     $message = "";
-
     $session['passo'] = 20; //imposto il passo a 20 per questo script
-
 ?>
-
 <?include("Header.php");?>
-
 <p><br></p>
 
-
-
 <?php
-
     function existSearchDate () {
-
         return $daGiorno != "" || $daMese != "" || $daAnno != "" || $aGiorno != "" || $aMese != "" || $aAnno != "";
-
     }
 
-
-
     function getBilancio () {
-
-	$totEntrateResult = connetti_query("select sum(Entrate) as TOTALE_ENTRATE from sd_movimenti where Deleted = 'N'");
-
+        $totEntrateResult = connetti_query("select sum(Entrate) as TOTALE_ENTRATE from sd_movimenti where Deleted = 'N'");
         $totUsciteResult  = connetti_query("select sum(Uscite)  as TOTALE_USCITE  from sd_movimenti where Deleted = 'N'");
-
-	while ($totEntrateRow  = dbms_fetch_array($totEntrateResult)) { $totEntrate = $totEntrateRow["TOTALE_ENTRATE"]; }
-
-	while ($totUsciteRow   = dbms_fetch_array($totUsciteResult))  { $totUscite = $totUsciteRow["TOTALE_USCITE"];	}
-
-	$bilancio   = $totEntrate - $totUscite;
-
-	return $bilancio >= 0 ? "<font color='#00FF00'>".$bilancio."</font>" : "<font color='#CC6633'>".$bilancio."</font>";	
-
+        while ($totEntrateRow  = dbms_fetch_array($totEntrateResult)) { $totEntrate = $totEntrateRow["TOTALE_ENTRATE"]; }
+        while ($totUsciteRow   = dbms_fetch_array($totUsciteResult))  { $totUscite = $totUsciteRow["TOTALE_USCITE"];	}
+        $bilancio   = $totEntrate - $totUscite;
+        return $bilancio >= 0 ? "<font color='#00FF00'>".$bilancio."</font>" : "<font color='#CC6633'>".$bilancio."</font>";	
     }
 
 
@@ -99,25 +77,15 @@
 
 
 <form name="lista_movimenti" action="Admin_Movimenti.php" method="post">
-
 <p>
-
     <div align="center">
-
         <font class="FacetFormHeaderFont">
-
             <a href="Admin_Nuovo_Movimento.php">
-
                 Inserisci Nuovo Movimento
-
             </a>
-
         </font>
-
     </div>
-
 </p>    
-
 <table>
 
     <!-- BEGIN Error -->

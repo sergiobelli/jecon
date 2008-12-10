@@ -71,42 +71,40 @@ class BilancioManager {
 	}
     
     function getSaldoBanca($annoRichiesto) {
-    /*
         $result = connetti_query(
 			"
-			select 	sd_voci_bilancio.voce as Voce_Bilancio,
-				sum(sd_movimenti.entrate) as Entrata,
-				sum(sd_movimenti.uscite) as Uscita
-			from 	sd_movimenti,sd_voci_bilancio
-			where	sd_movimenti.id_voce_bilancio = sd_voci_bilancio.id
-				and sd_movimenti.deleted = 'N'
-				and id_voce_bilancio IN (select id from sd_voci_bilancio where sd_voci_bilancio.bilancio = '1') 
-				and sd_movimenti.anno_bilancio = '".$annoRichiesto."'	
-									
-			group by sd_voci_bilancio.voce
-			order by sd_voci_bilancio.voce
+            select 	sum(m.entrate) - sum(m.uscite) as saldo_banca 
+
+            from 	sd_movimenti m,
+                    sd_voci_bilancio vc 
+
+            where	m.id_voce_bilancio = vc.id 
+			        and m.deleted = 'N' 
+                    and m.id_voce_bilancio IN (select sdvc.id from sd_voci_bilancio sdvc where sdvc.bilancio = '1') 
+			        and m.ID_Banca <> 2 
+			        and m.anno_bilancio = '".$annoRichiesto."'	 
+
 			");
-		return $result;
-        */
-        return "todo!!!";
+		while ($saldo_bancaRow  = dbms_fetch_array($result)) { $saldo_banca = $saldo_bancaRow["saldo_banca"]; }
+		return $saldo_banca;
     }
     function getSaldoCassa($annoRichiesto) {
-        /*$result = connetti_query(
+        $result = connetti_query(
 			"
-			select 	sd_voci_bilancio.voce as Voce_Bilancio,
-				sum(sd_movimenti.entrate) as Entrata,
-				sum(sd_movimenti.uscite) as Uscita
-			from 	sd_movimenti,sd_voci_bilancio
-			where	sd_movimenti.id_voce_bilancio = sd_voci_bilancio.id
-				and sd_movimenti.deleted = 'N'
-				and id_voce_bilancio IN (select id from sd_voci_bilancio where sd_voci_bilancio.bilancio = '1') 
-				and sd_movimenti.anno_bilancio = '".$annoRichiesto."'	
-									
-			group by sd_voci_bilancio.voce
-			order by sd_voci_bilancio.voce
+            select 	sum(m.entrate) - sum(m.uscite) as saldo_cassa 
+
+            from 	sd_movimenti m,
+                    sd_voci_bilancio vc 
+
+            where	m.id_voce_bilancio = vc.id 
+			        and m.deleted = 'N' 
+                    and m.id_voce_bilancio IN (select sdvc.id from sd_voci_bilancio sdvc where sdvc.bilancio = '1') 
+			        and m.ID_Banca = 2 
+			        and m.anno_bilancio = '".$annoRichiesto."'	 
+
 			");
-		return $result;*/
-        return "todo!!!";
+		while ($saldo_cassaRow  = dbms_fetch_array($result)) { $saldo_cassa = $saldo_cassaRow["saldo_cassa"]; }
+		return $saldo_cassa;
     }
 }
 
