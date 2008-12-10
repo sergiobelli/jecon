@@ -39,10 +39,10 @@ class VoceBilancioManager {
             );
     }
     function elenco () {
-        return connetti_query("select * from sd_voci_bilancio");
+        return connetti_query("select * from sd_voci_bilancio order by voce ");
     }
     function elencoFiltro ($filtro) {
-        return connetti_query("select * from sd_voci_bilancio where sd_voci_bilancio.voce like '%".$filtro."%' ");
+        return connetti_query("select * from sd_voci_bilancio where sd_voci_bilancio.voce like '%".$filtro."%'  order by voce  ");
     }
     function elencoValide () {
         return connetti_query(
