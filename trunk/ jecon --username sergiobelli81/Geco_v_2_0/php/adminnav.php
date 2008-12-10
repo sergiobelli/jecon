@@ -9,5 +9,5 @@
 | <a href="Admin_Movimenti.php"> Movimenti </a>
 <!-- | <a href="Admin_Scadenzario.php"> Scadenzario </a> -->
 | <a href="Admin_Tesseramenti.php"> Tesseramenti </a>
-| <a href="Admin_Bilancio.php"> Bilancio </a>
+| <a href="Admin_Bilancio.php"> Bilancio </a>| <a href="Admin_Voci_Bilancio.php"> Voci di Bilancio </a>
 </div>
