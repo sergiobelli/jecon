@@ -83,10 +83,10 @@ while ($bilancio_voci_row = dbms_fetch_array($tabellaBilancio)) {
 }   
 
     print "<tr>";
-    print "<td class=\"FacetDataTD\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\">&nbsp;</td>";    
+    print "<td class=\"FacetFieldCaptionTD\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\">&nbsp;</td>";    
     print "</tr>";
     
     print "<tr>";
@@ -97,26 +97,33 @@ while ($bilancio_voci_row = dbms_fetch_array($tabellaBilancio)) {
     print "</tr>";
 
     print "<tr>";
-    print "<td class=\"FacetDataTD\">Saldo Iniziale anno ".$annoRichiesto."</td>";
+    print "<td class=\"FacetFieldCaptionTD\">Saldi Banca/Cassa</td>";
+    print "<td class=\"FacetFieldCaptionTD\" align=\"center\">Iniziale</td>";
+    print "<td class=\"FacetFieldCaptionTD\" align=\"center\">Finale</td>";
+    print "<td class=\"FacetDataTD\" align=\"center\">&nbsp;</td>";    
+    print "</tr>";
+    
+    print "<tr>";
+    print "<td class=\"FacetDataTD\">Banca anno ".$annoRichiesto."</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoIniziale."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoIniziale." &nbsp;</td>";    
+    print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioBanca." &nbsp;</td>";    
     print "</tr>";
 
     print "<tr>";
-    print "<td class=\"FacetDataTD\">Bilancio Cassa anno ".$annoRichiesto."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
+    print "<td class=\"FacetDataTD\">Cassa anno ".$annoRichiesto."</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoIniziale."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioCassa." &nbsp;</td>";    
     print "</tr>";
 
     print "<tr>";
-    print "<td class=\"FacetDataTD\">Bilancio Banca anno ".$annoRichiesto."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioBanca." &nbsp;</td>";    
+    print "<td class=\"FacetFieldCaptionTD\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\" align=\"right\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\" align=\"right\">&nbsp;</td>";
+    print "<td class=\"FacetFieldCaptionTD\" align=\"right\">&nbsp;</td>";    
     print "</tr>";
-
+    
     print "<tr>";
     print "<td class=\"FacetDataTD\">Bilancio anno ".$annoRichiesto."</td>";
     print "<td class=\"FacetDataTD\">&nbsp;</td>";
