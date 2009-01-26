@@ -152,3 +152,10 @@ a.FacetNavigatorLink:hover,a.FacetNavigatorLink:active  {
 	font-family : Tahoma, Verdana, Arial, Helvetica;;
 }
 
+
+
+version {
+	font-family : Tahoma, Verdana, Arial, Helvetica;
+	font-size : 10px;
+	color : #504C43;
+}
