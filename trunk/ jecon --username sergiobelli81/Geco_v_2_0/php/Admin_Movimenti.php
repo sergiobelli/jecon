@@ -86,7 +86,7 @@
         </font>
     </div>
 </p>    
-<table>
+<table align="center" >
 
     <!-- BEGIN Error -->
 
@@ -381,12 +381,14 @@
             $query .= 
                 " where     (sd_movimenti.Id_Voce_Bilancio = sd_voci_bilancio.id OR sd_movimenti.Id_Voce_Bilancio = 0)
 							and sd_movimenti.Deleted = 'N'
-                            and sd_soggetti.ID_Soggetto = sd_movimenti.ID_Soggetto
-							AND sd_movimenti.Anno_Bilancio = '".$annoCorrente."' ";
+                            and sd_soggetti.ID_Soggetto = sd_movimenti.ID_Soggetto ";
         }
 
 		$query .= " group by   id_movimento
                     order by ".$orderby."";
+		
+		$query .= " LIMIT 0, 50 ";
+		
 		$result = connetti_query($query);
        
 
