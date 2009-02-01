@@ -387,7 +387,7 @@
 		$query .= " group by   id_movimento
                     order by ".$orderby."";
 		
-		$query .= " LIMIT 0, 50 ";
+		$query .= " LIMIT 0, 400 ";
 		
 		$result = connetti_query($query);
        
