@@ -69,6 +69,10 @@ $totaleUscite 					= BilancioManager::getTotaleUscite($annoRichiesto);
 $bilancio 						= BilancioManager::getBilancio($totaleEntrate, $totaleUscite);
 $bilancioWithColorDecoration 	= BilancioManager::getBilancioWithColorDecoration($bilancio);
 $saldoIniziale 					= BilancioManager::getSaldoIniziale($annoRichiesto);
+$saldoInizialeCassa 			= BilancioManager::getSaldoInizialeCassa($annoRichiesto);
+$saldoInizialeBanca 			= BilancioManager::getSaldoInizialeBanca($annoRichiesto);
+//$saldoFinaleCassa 				= BilancioManager::getSaldoFinaleCassa($annoRichiesto);
+//$saldoFinaleBanca 				= BilancioManager::getSaldoFinaleBanca($annoRichiesto);
 $totaleDisponibilita 			= $saldoIniziale + $bilancio;
 $bilancioCassa                  = BilancioManager::getSaldoCassa($annoRichiesto);
 $bilancioBanca                  = BilancioManager::getSaldoBanca($annoRichiesto);
@@ -105,14 +109,14 @@ while ($bilancio_voci_row = dbms_fetch_array($tabellaBilancio)) {
     
     print "<tr>";
     print "<td class=\"FacetDataTD\">Banca anno ".$annoRichiesto."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoIniziale."</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoInizialeBanca."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioBanca." &nbsp;</td>";    
     print "</tr>";
 
     print "<tr>";
     print "<td class=\"FacetDataTD\">Cassa anno ".$annoRichiesto."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoIniziale."</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoInizialeCassa."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioCassa." &nbsp;</td>";    
     print "</tr>";

@@ -51,6 +51,32 @@ class BilancioManager {
 		while ($saldoInizialeRow   = dbms_fetch_array($saldoInizialeResult))  { $saldoIniziale = $saldoInizialeRow["TOTALE_ENTRATE"];	}
 		return $saldoIniziale;
 	}
+	function getSaldoInizialeCassa($annoRichiesto) {
+		$query =
+		"
+		select 	Entrate as ENTRATA_CASSA
+		from 	sd_movimenti 
+		where 	Deleted = 'N' 
+				and id_voce_bilancio = 47 
+				and anno_bilancio = '".$annoRichiesto."'
+		";
+		$saldoInizialeResult  = connetti_query($query);
+		while ($saldoInizialeRow   = dbms_fetch_array($saldoInizialeResult))  { $saldoIniziale = $saldoInizialeRow["ENTRATA_CASSA"];	}
+		return $saldoIniziale;
+	}
+	function getSaldoInizialeBanca($annoRichiesto) {
+		$query =
+		"
+		select 	Entrate as ENTRATA_BANCA
+		from 	sd_movimenti 
+		where 	Deleted = 'N' 
+				and id_voce_bilancio = 48 
+				and anno_bilancio = '".$annoRichiesto."'
+		";
+		$saldoInizialeResult  = connetti_query($query);
+		while ($saldoInizialeRow   = dbms_fetch_array($saldoInizialeResult))  { $saldoIniziale = $saldoInizialeRow["ENTRATA_BANCA"];	}
+		return $saldoIniziale;
+	}
 	
 	function getTabellaBilancio ($annoRichiesto) {
 		$result = connetti_query(
@@ -80,7 +106,7 @@ class BilancioManager {
 
             where	m.id_voce_bilancio = vc.id 
 			        and m.deleted = 'N' 
-                    and m.id_voce_bilancio IN (select sdvc.id from sd_voci_bilancio sdvc where sdvc.bilancio = '1') 
+                    and m.id_voce_bilancio NOT IN (32,47,48) 
 			        and m.ID_Banca <> 2 
 			        and m.anno_bilancio = '".$annoRichiesto."'	 
 
@@ -98,7 +124,7 @@ class BilancioManager {
 
             where	m.id_voce_bilancio = vc.id 
 			        and m.deleted = 'N' 
-                    and m.id_voce_bilancio IN (select sdvc.id from sd_voci_bilancio sdvc where sdvc.bilancio = '1') 
+                    and m.id_voce_bilancio NOT IN (32,47,48) 
 			        and m.ID_Banca = 2 
 			        and m.anno_bilancio = '".$annoRichiesto."'	 
 

@@ -1918,9 +1918,7 @@ function movInsert (
 
   Descrizione,
 
-  ID_Admin, 
-  
-  data_inserimento
+  ID_Admin
 
   ) VALUES (
 
@@ -1944,9 +1942,7 @@ function movInsert (
 
    '$Descrizione',
 
-   '$Admin_logged' ,
-   
-   sysdate
+   '$Admin_logged' 
 
   )";
 
@@ -2060,9 +2056,7 @@ function movUpdate (
 
   Descrizione       = '$Descrizione',
 
-  ID_Admin          = '$Admin_logged'	,
-  
-  data_modifica     = sysdate
+  ID_Admin          = '$Admin_logged'	
 
   WHERE 
 
