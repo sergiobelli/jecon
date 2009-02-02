@@ -71,11 +71,11 @@ $bilancioWithColorDecoration 	= BilancioManager::getBilancioWithColorDecoration(
 $saldoIniziale 					= BilancioManager::getSaldoIniziale($annoRichiesto);
 $saldoInizialeCassa 			= BilancioManager::getSaldoInizialeCassa($annoRichiesto);
 $saldoInizialeBanca 			= BilancioManager::getSaldoInizialeBanca($annoRichiesto);
-//$saldoFinaleCassa 				= BilancioManager::getSaldoFinaleCassa($annoRichiesto);
-//$saldoFinaleBanca 				= BilancioManager::getSaldoFinaleBanca($annoRichiesto);
+$saldoFinaleCassa 				= BilancioManager::getSaldoInizialeCassa($annoRichiesto) + BilancioManager::getBilancioCassa($annoRichiesto);;
+$saldoFinaleBanca 				= BilancioManager::getSaldoInizialeBanca($annoRichiesto) + BilancioManager::getBilancioBanca($annoRichiesto);
 $totaleDisponibilita 			= $saldoIniziale + $bilancio;
-$bilancioCassa                  = BilancioManager::getSaldoCassa($annoRichiesto);
-$bilancioBanca                  = BilancioManager::getSaldoBanca($annoRichiesto);
+$bilancioCassa                  = BilancioManager::getBilancioCassa($annoRichiesto);
+$bilancioBanca                  = BilancioManager::getBilancioBanca($annoRichiesto);
 
 while ($bilancio_voci_row = dbms_fetch_array($tabellaBilancio)) {
     print "<tr>";
@@ -110,14 +110,14 @@ while ($bilancio_voci_row = dbms_fetch_array($tabellaBilancio)) {
     print "<tr>";
     print "<td class=\"FacetDataTD\">Banca anno ".$annoRichiesto."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$saldoInizialeBanca."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoFinaleBanca."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioBanca." &nbsp;</td>";    
     print "</tr>";
 
     print "<tr>";
     print "<td class=\"FacetDataTD\">Cassa anno ".$annoRichiesto."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$saldoInizialeCassa."</td>";
-    print "<td class=\"FacetDataTD\" align=\"right\">&nbsp;</td>";
+    print "<td class=\"FacetDataTD\" align=\"right\">".$saldoFinaleCassa."</td>";
     print "<td class=\"FacetDataTD\" align=\"right\">".$bilancioCassa." &nbsp;</td>";    
     print "</tr>";
 
