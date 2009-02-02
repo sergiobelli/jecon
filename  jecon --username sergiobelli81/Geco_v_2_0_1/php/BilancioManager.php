@@ -96,7 +96,7 @@ class BilancioManager {
 		return $result;
 	}
     
-    function getSaldoBanca($annoRichiesto) {
+    function getBilancioBanca($annoRichiesto) {
         $result = connetti_query(
 			"
             select 	sum(m.entrate) - sum(m.uscite) as saldo_banca 
@@ -114,7 +114,13 @@ class BilancioManager {
 		while ($saldo_bancaRow  = dbms_fetch_array($result)) { $saldo_banca = $saldo_bancaRow["saldo_banca"]; }
 		return $saldo_banca;
     }
-    function getSaldoCassa($annoRichiesto) {
+    function getSaldoFinaleBanca($annoRichiesto) {
+        $bilancioBanca = $this->getBilancioBanca($annoRichiesto);
+        $saldoInizialeBanca = $this->getSaldoInizialeBanca($annoRichiesto);
+        $saldoFinaleBanca = $bilancioBanca + $saldoInizialeBanca;
+        return $saldoFinaleBanca;
+    }
+    function getBilancioCassa($annoRichiesto) {
         $result = connetti_query(
 			"
             select 	sum(m.entrate) - sum(m.uscite) as saldo_cassa 
@@ -131,6 +137,12 @@ class BilancioManager {
 			");
 		while ($saldo_cassaRow  = dbms_fetch_array($result)) { $saldo_cassa = $saldo_cassaRow["saldo_cassa"]; }
 		return $saldo_cassa;
+    }
+    function getSaldoFinaleCassa($annoRichiesto) {
+        $bilancioCassa = $this->getBilancioCassa($annoRichiesto);
+        $saldoInizialeCassa = $this->getSaldoInizialeCassa($annoRichiesto);
+        $saldoFinaleCassa = $bilancioCassa + $saldoInizialeCassa;
+        return $saldoFinaleCassa;
     }
 }
 
