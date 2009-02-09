@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdTipiPagamento" table="sd_tipi_pagamento" catalog="banda">
+        <composite-id name="id" class="net.sergiobelli.jecon.be.orm.SdTipiPagamentoId">
+            <key-property name="idTipoPagamento" type="int">
+                <column name="ID_Tipo_Pagamento" />
+            </key-property>
+            <key-property name="tipoPagamento" type="string">
+                <column name="Tipo_Pagamento" length="30" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
