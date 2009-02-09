@@ -1,4 +1,4 @@
-<div align="right" class="version">	v_2_0_1_20090205</div><div align="center">
+<div align="right" class="version">	v_2_1_0_2009MMYY</div><div align="center">
 <a href="Admin_Configurazione.php">Configurazione</a> 
 | <a href="Admin_Soggetti.php">Soggetti</a> 
 <!-- | <a href="Admin_Clienti.php">Clienti</a>   -->
