@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Readme Install</title>
+</head>
+
+<body>
+
+
+<h1>Istruzioni per l'installazione</h1>
+
+<b>Requisiti SW</b>
+<ul>
+<li>Piattaforma Linux o Windows
+<li>Apache o IIS o altro webserver
+<li>Php con Mysql
+</ul>
+
+<p><b>Step per installazione veloce</b></p>
+<p>Creare un database (es. "geco") in cui verranno create le tabelle.
+<br>Scompattate tutti i file presenti nel .zip o tar.gz di installazione in una dir temporanea del vs hard disk.
+<br>Lanciate lo script geco_struttura.sql da phpMyAdmin o dalla riga di comando di mysql: le tabelle hanno tutte il prefisso "sd_" per cui non dovrebbero creare
+problemi ad altre tabelle gi&agrave; presenti, ma conviene sempre controllare prima. 
+<br>Nel caso dovrete editare a mano il file geco.sql per cambiare il prefisso a TUTTE le tabelle. In questo caso dovrete aggiornare di conseguenza anche il file Config.php
+<br>Lanciare quindi il file geco_dati.sql sempre con la stessa modalit&agrave;.
+<br>Modificate il file Config.php in accordo con il vostro db, utente, password MySql
+<br>Copiate tutti i file .php e .inc in una dir di publishing del vostro web server, 
+<br>- ad es. \inetpub\wwwroot\geco\ se il vostro server gira su Win/IIS 
+<br>- /htdocs/geco se avete Apache
+<br>create una sottodir \geco\images con i permessi in scrittura (chmod 777 su Unix).
+<br>L'installazione &egrave; terminata, per aprire l'amministrazione collegarsi all'URL 
+<br>http://vostrosito.com/geco/admin.php
+
+</p>
+
+</body>
+</html>
