@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1/banda</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLMyISAMDialect</property>
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdAccessi.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdTipiSoci.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdAnniBilancio.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdVociBilancio.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdMovimenti.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdSoggetti.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdAdmin.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdTipiPagamento.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdTesseramenti.hbm.xml" />
+        <mapping resource="net/sergiobelli/jecon/be/orm/SdBanche.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdBanche" table="sd_banche" catalog="banda">
+        <id name="idBanca" type="java.lang.Integer">
+            <column name="ID_Banca" />
+            <generator class="identity" />
+        </id>
+        <property name="banca" type="string">
+            <column name="Banca" length="50" not-null="true" />
+        </property>
+        <property name="indirizzo" type="string">
+            <column name="Indirizzo" length="100" not-null="true" />
+        </property>
+        <property name="agenzia" type="string">
+            <column name="Agenzia" length="4" not-null="true" />
+        </property>
+        <property name="abi" type="string">
+            <column name="Abi" length="6" not-null="true" />
+        </property>
+        <property name="cab" type="string">
+            <column name="Cab" length="6" not-null="true" />
+        </property>
+        <property name="conto" type="string">
+            <column name="Conto" length="13" not-null="true" />
+        </property>
+        <property name="titolare" type="string">
+            <column name="Titolare" length="100" not-null="true" />
+        </property>
+        <property name="deleted" type="char">
+            <column name="Deleted" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

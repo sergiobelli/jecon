@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdVociBilancio" table="sd_voci_bilancio" catalog="banda">
+        <composite-id name="id" class="net.sergiobelli.jecon.be.orm.SdVociBilancioId">
+            <key-property name="id" type="byte">
+                <column name="id" />
+            </key-property>
+            <key-property name="voce" type="string">
+                <column name="voce" length="250" />
+            </key-property>
+        </composite-id>
+        <property name="bilancio" type="char">
+            <column name="bilancio" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

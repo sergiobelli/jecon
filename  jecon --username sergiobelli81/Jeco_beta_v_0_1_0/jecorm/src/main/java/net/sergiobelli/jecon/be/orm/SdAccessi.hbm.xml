@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdAccessi" table="sd_accessi" catalog="banda">
+        <composite-id name="id" class="net.sergiobelli.jecon.be.orm.SdAccessiId">
+            <key-property name="id" type="int">
+                <column name="ID" />
+            </key-property>
+            <key-property name="sessione" type="string">
+                <column name="SESSIONE" length="32" />
+            </key-property>
+            <key-property name="username" type="string">
+                <column name="USERNAME" length="50" />
+            </key-property>
+            <key-property name="data" type="date">
+                <column name="DATA" length="0" />
+            </key-property>
+        </composite-id>
+        <property name="ora" type="time">
+            <column name="ORA" length="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
