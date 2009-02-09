@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdTesseramenti" table="sd_tesseramenti" catalog="banda">
+        <id name="idTesseramento" type="java.lang.Integer">
+            <column name="ID_Tesseramento" />
+            <generator class="identity" />
+        </id>
+        <property name="idSoggetto" type="int">
+            <column name="ID_Soggetto" not-null="true" />
+        </property>
+        <property name="dataTessera" type="date">
+            <column name="Data_Tessera" length="0" not-null="true" />
+        </property>
+        <property name="importoVersato" type="int">
+            <column name="Importo_Versato" not-null="true" />
+        </property>
+        <property name="validita" type="string">
+            <column name="Validita" length="4" not-null="true" />
+        </property>
+        <property name="tipoSocio" type="string">
+            <column name="Tipo_Socio" length="50" not-null="true" />
+        </property>
+        <property name="idPromotore" type="java.lang.Integer">
+            <column name="ID_Promotore" />
+        </property>
+        <property name="deleted" type="char">
+            <column name="Deleted" length="1" not-null="true" />
+        </property>
+        <property name="idMovimento" type="int">
+            <column name="ID_Movimento" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

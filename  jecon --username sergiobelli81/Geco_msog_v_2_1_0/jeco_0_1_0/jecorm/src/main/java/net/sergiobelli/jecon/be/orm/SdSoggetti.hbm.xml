@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdSoggetti" table="sd_soggetti" catalog="banda">
+        <id name="idSoggetto" type="java.lang.Integer">
+            <column name="ID_Soggetto" />
+            <generator class="identity" />
+        </id>
+        <property name="ragioneSociale" type="string">
+            <column name="Ragione_Sociale" length="100" />
+        </property>
+        <property name="cognome" type="string">
+            <column name="Cognome" length="100" not-null="true" />
+        </property>
+        <property name="nome" type="string">
+            <column name="Nome" length="30" not-null="true" />
+        </property>
+        <property name="pi" type="string">
+            <column name="PI" length="12" />
+        </property>
+        <property name="cf" type="string">
+            <column name="CF" length="16" />
+        </property>
+        <property name="descrizione" type="string">
+            <column name="Descrizione" length="100" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="Tipo" length="20" />
+        </property>
+        <property name="indirizzo" type="string">
+            <column name="Indirizzo" length="60" />
+        </property>
+        <property name="citta" type="string">
+            <column name="Citta" length="60" />
+        </property>
+        <property name="cap" type="string">
+            <column name="CAP" length="5" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="Provincia" length="4" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="Telefono" length="20" />
+        </property>
+        <property name="telefono2" type="string">
+            <column name="Telefono2" length="20" />
+        </property>
+        <property name="telefono3" type="string">
+            <column name="Telefono3" length="20" />
+        </property>
+        <property name="fax" type="string">
+            <column name="Fax" length="20" />
+        </property>
+        <property name="cell" type="string">
+            <column name="Cell" length="20" />
+        </property>
+        <property name="EMail" type="string">
+            <column name="E_mail" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="8" />
+        </property>
+        <property name="web" type="string">
+            <column name="Web" length="50" />
+        </property>
+        <property name="deleted" type="char">
+            <column name="Deleted" length="1" not-null="true" />
+        </property>
+        <property name="privacy" type="char">
+            <column name="Privacy" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
