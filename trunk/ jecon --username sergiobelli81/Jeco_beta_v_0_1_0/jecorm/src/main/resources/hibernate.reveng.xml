@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="banda" match-name="sd_accessi"/>
+  <table-filter match-catalog="banda" match-name="sd_admin"/>
+  <table-filter match-catalog="banda" match-name="sd_anni_bilancio"/>
+  <table-filter match-catalog="banda" match-name="sd_banche"/>
+  <table-filter match-catalog="banda" match-name="sd_movimenti"/>
+  <table-filter match-catalog="banda" match-name="sd_soggetti"/>
+  <table-filter match-catalog="banda" match-name="sd_tesseramenti"/>
+  <table-filter match-catalog="banda" match-name="sd_tipi_pagamento"/>
+  <table-filter match-catalog="banda" match-name="sd_tipi_soci"/>
+  <table-filter match-catalog="banda" match-name="sd_voci_bilancio"/>
+</hibernate-reverse-engineering>

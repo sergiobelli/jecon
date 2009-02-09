@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9-feb-2009 22.42.43 by Hibernate Tools 3.2.4.CR1 -->
+<hibernate-mapping>
+    <class name="net.sergiobelli.jecon.be.orm.SdMovimenti" table="sd_movimenti" catalog="banda">
+        <id name="idMovimento" type="java.lang.Integer">
+            <column name="ID_Movimento" />
+            <generator class="identity" />
+        </id>
+        <property name="idSoggetto" type="string">
+            <column name="ID_Soggetto" length="12" not-null="true" />
+        </property>
+        <property name="dataValuta" type="date">
+            <column name="Data_Valuta" length="0" not-null="true" />
+        </property>
+        <property name="tipoPagamento" type="string">
+            <column name="Tipo_Pagamento" length="100" not-null="true" />
+        </property>
+        <property name="entrate" type="big_decimal">
+            <column name="Entrate" precision="8" not-null="true" />
+        </property>
+        <property name="uscite" type="big_decimal">
+            <column name="Uscite" precision="8" not-null="true" />
+        </property>
+        <property name="idBanca" type="string">
+            <column name="ID_Banca" length="12" not-null="true" />
+        </property>
+        <property name="descrizione" type="string">
+            <column name="Descrizione" length="65535" not-null="true" />
+        </property>
+        <property name="idVoceBilancio" type="byte">
+            <column name="Id_Voce_Bilancio" not-null="true" />
+        </property>
+        <property name="dataCompetenza" type="date">
+            <column name="Data_Competenza" length="0" not-null="true" />
+        </property>
+        <property name="deleted" type="char">
+            <column name="Deleted" length="1" not-null="true" />
+        </property>
+        <property name="idAdmin" type="string">
+            <column name="ID_Admin" length="50" not-null="true" />
+        </property>
+        <property name="annoBilancio" type="string">
+            <column name="Anno_Bilancio" length="4" not-null="true" />
+        </property>
+        <property name="dataInserimento" type="date">
+            <column name="data_inserimento" length="0" not-null="true" />
+        </property>
+        <property name="dataModifica" type="date">
+            <column name="data_modifica" length="0" not-null="true" />
+        </property>
+        <property name="dataInserimento2" type="date">
+            <column name="data_inserimento_2" length="0" not-null="true" />
+        </property>
+        <property name="dataInserimento3" type="date">
+            <column name="data_inserimento_3" length="0" not-null="true" />
+        </property>
+        <property name="dataModifica2" type="date">
+            <column name="data_modifica_2" length="0" not-null="true" />
+        </property>
+        <property name="dataModifica3" type="date">
+            <column name="data_modifica_3" length="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
